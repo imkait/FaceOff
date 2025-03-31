@@ -115,7 +115,7 @@ def run(model: str, min_detection_confidence: float,min_suppression_threshold: f
         cv2.imshow('FaceOff', current_frame)
 
         # ESC鍵離開程式
-        if cv2.waitKey(1) == 27:
+        if cv2.waitKey(1) == 27 or cv2.getWindowProperty("FaceOff", cv2.WND_PROP_VISIBLE) < 1:
             break
 
     detector.close()
